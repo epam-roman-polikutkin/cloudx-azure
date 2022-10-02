@@ -32,6 +32,8 @@ builder.Services.AddEndpoints();
 // Use to force loading of appsettings.json of test project
 builder.Configuration.AddConfigurationFile("appsettings.json");
 builder.Logging.AddConsole();
+builder.Logging.AddApplicationInsights();
+builder.Services.AddApplicationInsightsTelemetry();
 
 Microsoft.eShopWeb.Infrastructure.Dependencies.ConfigureServices(builder.Configuration, builder.Services);
 
@@ -39,6 +41,7 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
         .AddEntityFrameworkStores<AppIdentityDbContext>()
         .AddDefaultTokenProviders();
 
+builder.Services.AddApplicationInsightsTelemetry();
 builder.Services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));
 builder.Services.AddScoped(typeof(IReadRepository<>), typeof(EfRepository<>));
 builder.Services.Configure<CatalogSettings>(builder.Configuration);
@@ -126,6 +129,12 @@ builder.Services.AddSwaggerGen(c =>
 
 var app = builder.Build();
 
+app.Logger.LogInformation("Test info");
+app.Logger.LogWarning("Test warn");
+app.Logger.LogError("Test error");
+app.Logger.LogDebug("Test debug");
+app.Logger.LogTrace("Test trace");
+
 app.Logger.LogInformation("PublicApi App created...");
 
 app.Logger.LogInformation("Seeding Database...");
@@ -153,6 +162,8 @@ if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
 }
+
+throw new Exception("Startup cannot move further");
 
 app.UseMiddleware<ExceptionMiddleware>();
 
