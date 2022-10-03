@@ -74,10 +74,14 @@ builder.Services.Configure<ServiceConfig>(config =>
     config.Path = "/allservices";
 });
 
+//builder.Services.Configure<CatalogSettings>(builder.Configuration);
+//builder.Services.AddScoped<CatalogSettings>(c => builder.Configuration.GetSection());
+
 // blazor configuration
 var configSection = builder.Configuration.GetRequiredSection(BaseUrlConfiguration.CONFIG_NAME);
 builder.Services.Configure<BaseUrlConfiguration>(configSection);
 var baseUrlConfig = configSection.Get<BaseUrlConfiguration>();
+builder.Services.AddScoped<BaseUrlConfiguration>(c => baseUrlConfig);
 
 // Blazor Admin Required Services for Prerendering
 builder.Services.AddScoped<HttpClient>(s => new HttpClient
