@@ -7,4 +7,5 @@ public class BaseUrlConfiguration
     public string ApiBase { get; set; }
     public string WebBase { get; set; }
     public string ReserveOrderItemFunctionBaseUrl { get; set; }
+    public string DeliveryProcessOrderItemFunctionBaseUrl { get; set; }
 }

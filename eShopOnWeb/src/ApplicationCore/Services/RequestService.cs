@@ -27,26 +27,7 @@ public class RequestService : IRequestService
             return;
         }
 
-        var orderRequest = new OrderRequest
-        {
-            Id = order.Id,
-            BuyerId = order.BuyerId,
-            OrderDate = order.OrderDate,
-            ShipToAddress = new Entities.Requests.Address(
-                order.ShipToAddress.Street,
-                order.ShipToAddress.City,
-                order.ShipToAddress.State,
-                order.ShipToAddress.Country,
-                order.ShipToAddress.ZipCode),
-            OrderItems = order.OrderItems.Select(o => new Entities.Requests.OrderItem
-            {
-                CatalogItemId = o.ItemOrdered.CatalogItemId,
-                ProductName = o.ItemOrdered.ProductName,
-                UnitPrice = o.UnitPrice,
-                Units = o.Units
-            }).ToList(),
-            TotalPrice = order.Total()
-        };
+        var orderRequest = GetOrderRequest(order);
 
         using (var client = new HttpClient())
         {
@@ -60,5 +41,52 @@ public class RequestService : IRequestService
 
             _appLogger.LogInformation(resultContent);
         }
+    }
+
+    public async Task SendDeliveryProcessOrderRequestAsync(Order order)
+    {
+        if (order == null)
+        {
+            return;
+        }
+
+        var orderRequest = GetOrderRequest(order);
+
+        using (var client = new HttpClient())
+        {
+            var strContent = JsonConvert.SerializeObject(orderRequest);
+            var content = new StringContent(strContent);
+            content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+
+            var result = await client.PostAsync(
+                $"{_baseUrlConfig.DeliveryProcessOrderItemFunctionBaseUrl}", content);
+            string resultContent = await result.Content.ReadAsStringAsync();
+
+            _appLogger.LogInformation(resultContent);
+        }
+    }
+
+    private static OrderRequest GetOrderRequest(Order order)
+    {
+        return new OrderRequest
+        {
+            Id = order.Id.ToString(),
+            BuyerId = order.BuyerId,
+            OrderDate = order.OrderDate,
+            ShipToAddress = new Entities.Requests.Address(
+                        order.ShipToAddress.Street,
+                        order.ShipToAddress.City,
+                        order.ShipToAddress.State,
+                        order.ShipToAddress.Country,
+                        order.ShipToAddress.ZipCode),
+            OrderItems = order.OrderItems.Select(o => new Entities.Requests.OrderItem
+            {
+                CatalogItemId = o.ItemOrdered.CatalogItemId,
+                ProductName = o.ItemOrdered.ProductName,
+                UnitPrice = o.UnitPrice,
+                Units = o.Units
+            }).ToList(),
+            TotalPrice = order.Total()
+        };
     }
 }

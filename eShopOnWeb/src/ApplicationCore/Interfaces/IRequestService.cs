@@ -9,4 +9,5 @@ namespace Microsoft.eShopWeb.ApplicationCore.Interfaces;
 public interface IRequestService
 {
     Task SendOrderRequestAsync(Order order);
+    Task SendDeliveryProcessOrderRequestAsync(Order order);
 }

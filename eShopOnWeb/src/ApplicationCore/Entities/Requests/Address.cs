@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace Microsoft.eShopWeb.ApplicationCore.Entities.Requests;
 
@@ -18,14 +19,19 @@ public class Address
         ZipCode = zipcode;
     }
 
+    [JsonProperty("street")]
     public string Street { get; private set; }
 
+    [JsonProperty("city")]
     public string City { get; private set; }
 
+    [JsonProperty("state")]
     public string State { get; private set; }
 
+    [JsonProperty("country")]
     public string Country { get; private set; }
 
+    [JsonProperty("zipCode")]
     public string ZipCode { get; private set; }
     
 }

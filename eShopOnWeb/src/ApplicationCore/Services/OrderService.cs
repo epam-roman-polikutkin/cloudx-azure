@@ -53,6 +53,6 @@ public class OrderService : IOrderService
 
         await _orderRepository.AddAsync(order);
 
-        await _requestService.SendOrderRequestAsync(order);
+        await _requestService.SendDeliveryProcessOrderRequestAsync(order);
     }
 }

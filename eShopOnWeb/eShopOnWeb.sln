@@ -41,9 +41,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PublicApiIntegrationTests",
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Functions", "Functions", "{1EDD0312-755B-4B08-AB47-F7B4282C04FF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderItemsReserver", "src\OrderItemsReserver\OrderItemsReserver.csproj", "{A9A5DDF2-B297-44BF-996D-0F9581617828}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderItemsReserver", "src\OrderItemsReserver\OrderItemsReserver.csproj", "{A9A5DDF2-B297-44BF-996D-0F9581617828}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeliveryOrderProcessorFunction", "src\DeliveryOrderProcessorFunction\DeliveryOrderProcessorFunction.csproj", "{6B3E7CEC-C288-46F5-B3A3-5401903A0CE1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeliveryOrderProcessorFunction", "src\DeliveryOrderProcessorFunction\DeliveryOrderProcessorFunction.csproj", "{6B3E7CEC-C288-46F5-B3A3-5401903A0CE1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -120,7 +120,7 @@ Global
 		{D53EF010-8F8C-4337-A059-456E19D8AE63} = {15EA4737-125B-4E6E-A806-E13B7EBCDCCF}
 		{1EDD0312-755B-4B08-AB47-F7B4282C04FF} = {419A6ACE-0419-4315-A6FB-B0E63D39432E}
 		{A9A5DDF2-B297-44BF-996D-0F9581617828} = {1EDD0312-755B-4B08-AB47-F7B4282C04FF}
-		{6B3E7CEC-C288-46F5-B3A3-5401903A0CE1} = {419A6ACE-0419-4315-A6FB-B0E63D39432E}
+		{6B3E7CEC-C288-46F5-B3A3-5401903A0CE1} = {1EDD0312-755B-4B08-AB47-F7B4282C04FF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {49813262-5DA3-4D61-ABD3-493C74CE8C2B}
