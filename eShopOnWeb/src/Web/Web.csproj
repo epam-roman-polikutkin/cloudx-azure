@@ -36,6 +36,7 @@
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.23.0" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Properties\PublishProfiles\" />
     <Folder Include="wwwroot\fonts\" />
     <Folder Include="wwwroot\lib\" />
   </ItemGroup>
