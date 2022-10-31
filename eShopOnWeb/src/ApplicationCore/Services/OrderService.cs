@@ -52,7 +52,6 @@ public class OrderService : IOrderService
         var order = new Order(basket.BuyerId, shippingAddress, items);
 
         await _orderRepository.AddAsync(order);
-
-        await _requestService.SendOrderRequestAsync(order);
+        //await _requestService.SendOrderRequestAsync(order);
     }
 }
