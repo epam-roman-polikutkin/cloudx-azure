@@ -1,9 +1,9 @@
 {
   "IsEncrypted": false,
   "Values": {
-    "AzureWebJobsStorage": "DefaultEndpointsProtocol=https;AccountName=cloudx8a2a;AccountKey=KV712CuY71XRMxRKqT/dR4Qnfc3sn/215LPZkuJ8zs2UgH8IBRa3MGyueecLEwbHmxIu/M/jsO1r+AStjYSpnA==;EndpointSuffix=core.windows.net",
+    "AzureWebJobsStorage": "DefaultEndpointsProtocol=https;AccountName=cloudx9927;AccountKey=yZl9ZlJZZw+dti1ryLGIqn+Q3Hkn5Qv1i5TTV9OvoBNflnF1U7anbYa9wkdW3Se43RNeGy0D8rcx+AStWbQZZQ==;EndpointSuffix=core.windows.net",
     "FUNCTIONS_WORKER_RUNTIME": "dotnet",
-    "StorageConnection": "",
+    "ServiceBusConnectionString": "Endpoint=sb://roman-polikutkin-service-bus-east-us.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=9n5J9NCcRTjL3Px6oIH4cSBrFfkiloHbROgQOicm3Bc=",
     "StorageContainerName": "order-items-container"
   }
 }

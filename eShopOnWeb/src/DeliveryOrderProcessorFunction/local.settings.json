@@ -1,9 +1,9 @@
 {
   "IsEncrypted": false,
   "Values": {
-    "AzureWebJobsStorage": "",
+    "AzureWebJobsStorage": "DefaultEndpointsProtocol=https;AccountName=cloudx9927;AccountKey=yZl9ZlJZZw+dti1ryLGIqn+Q3Hkn5Qv1i5TTV9OvoBNflnF1U7anbYa9wkdW3Se43RNeGy0D8rcx+AStWbQZZQ==;EndpointSuffix=core.windows.net",
     "FUNCTIONS_WORKER_RUNTIME": "dotnet",
     "EndpointUri": "https://roman-polikutkin-cosmos-east-us.documents.azure.com:443/",
-    "PrimaryKey": "9AWkbUZn9XIIOWlR7KCb5YcXdasICrvtXOLfPLsegvNRBbmAomj2oONqAYYZisibWsGT9QJ1Y9FKR6EOtV0LSA=="
+    "PrimaryKey": "XyQp0x96UMkxoGAiD6aIT0LLksaEDE5oS78FWDKRpmOFWIEePvYT82eHS94tsAFJiLUn1JlHaocrACDbn4re3g=="
   }
 }
